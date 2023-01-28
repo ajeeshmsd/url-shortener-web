@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
+import { Welcome } from "./components/pages/welcome";
 
 function App() {
+  const [loggedIn, setLoggedIn] = useState(false);
+
   return (
-    <h1>
-      URL Shortener
-    </h1>
+    loggedIn
+      ? (<>Home</>) 
+      : (<Welcome setLoggedIn={setLoggedIn} />)
   );
 }
 
